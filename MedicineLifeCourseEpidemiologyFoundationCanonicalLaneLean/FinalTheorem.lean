@@ -1,0 +1,18 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.MedicineLifeCourseEpidemiologyFoundationCanonicalLaneLean.CompartmentModel
+import HautevilleHouse.MedicineLifeCourseEpidemiologyFoundationCanonicalLaneLean.Pharmacokinetics
+import HautevilleHouse.MedicineLifeCourseEpidemiologyFoundationCanonicalLaneLean.DiagnosticInference
+import HautevilleHouse.MedicineLifeCourseEpidemiologyFoundationCanonicalLaneLean.SurvivalAnalysis
+
+namespace HautevilleHouse
+namespace MedicineLifeCourseEpidemiologyFoundationCanonicalLaneLean
+
+def MedicineAdmissibleClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem medicine_admissible_endgame (A : AdmissibleClass) :
+    MedicineAdmissibleClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end MedicineLifeCourseEpidemiologyFoundationCanonicalLaneLean
+end HautevilleHouse
